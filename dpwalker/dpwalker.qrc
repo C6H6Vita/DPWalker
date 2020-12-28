@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>depends.png</file>
+        <file>function.png</file>
+        <file>object.png</file>
+        <file>open.png</file>
+        <file>close.png</file>
+    </qresource>
+</RCC>

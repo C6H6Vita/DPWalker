@@ -53,4 +53,4 @@ This software tested on Ubuntu 18.04
 
 ### Screenshot
 
-![](/home/c6h6/install/DPWalker/MDResource/Screenshot.png)
+![](./MDResource/Screenshot.png)

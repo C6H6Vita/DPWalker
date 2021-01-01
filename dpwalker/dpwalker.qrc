@@ -5,5 +5,6 @@
         <file>object.png</file>
         <file>open.png</file>
         <file>close.png</file>
+        <file>spinner.gif</file>
     </qresource>
 </RCC>

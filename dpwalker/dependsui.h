@@ -49,10 +49,14 @@ private slots:
 	void dependencyExpanded( QTreeWidgetItem *pItem );
 	void dependencySelected( QTreeWidgetItem *pItem );
 	void setRootItemExpanded();
-
+    void runCompleted();
+    void aboutClicked();
 private:
 	Ui::DependsUIBase m_ui;
 	QString m_dirPath;
+    QMovie* gif;
+
+    void setBusy(bool isBusy);
 };
 
 #endif

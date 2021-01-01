@@ -1,1 +1,11 @@
-Initial version of this SW.
+v 1.0.0 
+
+- Initial version of this SW.
+
+v 1.1.0
+
+- Add spinner UI when listing is engaged.
+- Change cursor shape when listing is engaged.
+
+
+

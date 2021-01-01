@@ -2,6 +2,8 @@
 
 A Dependency-Walker like application for Linux
 
+Based on: https://github.com/shentok/depends-ui
+
 ### What is it?
 
 This is  a free utility that scans Linux ELF-formated binaries(Executable, Shared library) and builds a hierarchical tree diagram of all dependent libraries. 

@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author>Bernhard Beschow</author>
+    <author> Bernhard Beschow, C6H6Vita </author>
+    <comment>***************************************************************************
+ *   Copyright (C) 2007 by Bernhard Beschow                                *
+ *   bbeschow (.at) cs.tu-berlin.de                                        *
+ *   Copyright (C) 2020 by C6H6Vita                                        *
+ *   c6h6 (.at) outlook.kr                                                 *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************</comment>
  <class>DependsUIBase</class>
  <widget class="QMainWindow" name="DependsUIBase">
   <property name="geometry">
@@ -22,7 +43,7 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="widget">
-   <layout class="QVBoxLayout">
+   <layout class="QVBoxLayout" name="m_BaseLayout">
     <item>
      <widget class="QSplitter" name="splitter1">
       <property name="orientation">
@@ -221,6 +242,65 @@
       </widget>
      </widget>
     </item>
+    <item>
+     <widget class="QWidget" name="m_StatusbarWzt" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="m_lbSpinner">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>23</width>
+           <height>23</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>23</width>
+           <height>23</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>661</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="MenuBar">
@@ -240,8 +320,16 @@
     <addaction name="separator"/>
     <addaction name="fileExitAction"/>
    </widget>
+   <widget class="QMenu" name="menuHelo">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="aboutAction"/>
+   </widget>
    <addaction name="fileMenu"/>
+   <addaction name="menuHelo"/>
   </widget>
+  <widget class="QStatusBar" name="statusBar"/>
   <action name="fileOpenAction">
    <property name="icon">
     <iconset resource="dpwalker.qrc">
@@ -276,6 +364,11 @@
    </property>
    <property name="name" stdset="0">
     <cstring>fileExitAction</cstring>
+   </property>
+  </action>
+  <action name="aboutAction">
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>
@@ -332,10 +425,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>aboutAction</sender>
+   <signal>triggered()</signal>
+   <receiver>DependsUIBase</receiver>
+   <slot>aboutClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>343</x>
+     <y>298</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>fileOpen()</slot>
   <slot>fileExit()</slot>
   <slot>dependencySelected(QTreeWidgetItem*)</slot>
+  <slot>aboutClicked()</slot>
  </slots>
 </ui>
